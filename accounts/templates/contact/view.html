@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style='text-align:center'>What you say ...!</h1>
+    <p style='text-align:center'>This is actully works.</p>
+    <div class='container'>
+    <div class='row'>
+        <div class='col'>
+            <div class='col-sm-6 col-12'>
+                <form class='contact-form' method='POST' style='text-align:left' action="{% url 'accounts:contact' %}"> {% csrf_token %}
+                    {{ form }}
+                    <button type='submit' class='btn btn-success'>Submit</button>
+                <form>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

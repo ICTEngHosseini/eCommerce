@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class='text-left'>
+        <div class='container'>
+        <div class='row'>
+            <div class='col'>
+                <p>{{ content }}</p>
+                <div class='col-sm-6 col-12'>
+                <form method='POST' > {% csrf_token %}
+                    {{ form }}
+                    <button type='submit' class='btn btn-success'>Submit</button>
+                </form>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+{% endblock content %}
