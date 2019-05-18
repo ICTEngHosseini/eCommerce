@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style='text-align:center'>All things for sell </h1>
+    <p style='text-align:center'>This is actully works.</p>
+    <div class='container-fluid'>
+        <div class='row mb-3'>
+            {% if query %}
+            <div class='col-12'>
+                Results for <b>{{ query }}</b>
+                {% include 'search/snippets/search-form.html' %}
+                <hr/>
+                {% for obj in object_list %}
+                        {{ forloop.counter }}
+                        {% include 'products/snippets/card.html' with instance=obj %}
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class='col-12'>
+                <b>Results Not found!</b>
+                <hr/>
+            </div>
+            {% endif %}
+        </div>
+
+    </div>
+{% endblock content %}
