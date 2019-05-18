@@ -1,5 +1,7 @@
 body {
-    color: grey;
+    color: white;
+    background-image: url("006.png");
+    background-repeat: no-repeat;
 }
 .center {
     display: block;

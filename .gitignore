@@ -26,3 +26,5 @@ search/migrations/__pycache__/*
 tags/__pycache__/*
 tags/migrations/*
 tags/migrations/__pycache__/*
+static_my_project/css/006.png
+static_my_project/img/*
