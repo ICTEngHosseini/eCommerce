@@ -1,6 +1,6 @@
 .shop-img > img {
-    width: 367px;
-    height: 400px;
+    width: 306.5px;
+    height: 339.5px;
 }
 .hover-style {
     display: block;
@@ -71,13 +71,13 @@
 .hover-style::before {
     background: #fff none repeat scroll 0 0;
     content: "";
-    height: 100%;
+    height: 339.5px;
     left: 0;
     opacity: 0;
     position: absolute;
     top: 0;
     transition: all 0.3s ease-in-out 0s;
-    width: 100%;
+    width: 306.5px;
 }
 .hover-style:hover::before {
     opacity: 0.8;
@@ -130,7 +130,8 @@
     z-index: 999;
 }
 .shop-img:hover .product-cart-3 {
-    left: 0px;
+    width: 306.5px;
+    height: 339.5px;
     opacity: 1;
 }
 .title-style-3 h3 a {
@@ -423,7 +424,7 @@
     color: #fff;
     display: block;
     font-size: 12px;
-    font-weight: 400;
+    font-weight: 339.5;
     height: 40px;
     letter-spacing: 0.5px;
     line-height: 24px;
@@ -529,7 +530,7 @@
     color: #fff;
     display: inline-block;
     font-size: 13px;
-    font-weight: 400;
+    font-weight: 339.5;
     margin: 0;
     padding: 10px 15px;
     text-shadow: none;
@@ -556,6 +557,6 @@
     background-color: #fdfdfd;
 }
 .shop-img img {
-    width: 367px;
-    height: 400px;
+    width: 306.5px;
+    height: 339.5px;
 }
