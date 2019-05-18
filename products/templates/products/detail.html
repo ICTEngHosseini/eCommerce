@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ title }}</h2>
+    <h1 style='text-align:center'>All things for sell </h1>
+    <p style='text-align:center'>This is actully works.</p>
+    <div class='container'>
+    <div class='row'>
+        <p style='text-align:center'></p>
+        <div class='col-sm-6 col-12' class='ml-auto'>
+            {{ object.title }} <br/>
+            {{ object.description | linebreaks }} <br/>
+            {% if object.image %}
+                <img src='{{ object.image.url }}' style="width:100%;max-width:300px" class="img-thumbnail">
+            {% endif %}
+            <div class='col-12 col-md-6'>
+                {% include 'products/snippets/update_card.html' with product=object cart=cart %}
+                <a href={% url 'products:products' %} class="btn btn-secondary">Back</a>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

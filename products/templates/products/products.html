@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="shop-area pt-100 pb-70">
+        <div class="container-fluid">
+            <div class="shop-title-text text-center">
+                <h2>All things for sell </h2>
+                <p>This is actully works.</p>
+            </div>
+            <div class="shop-style-all mt-50">
+                <div class='row'>
+                    {% for obj in object_list %}
+                        {% include 'products/snippets/card.html' with instance=obj %}
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
