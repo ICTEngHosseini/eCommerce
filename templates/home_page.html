@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block base_head %}
+    <link rel= 'stylesheet' href='{% static "css/main.css"%}'>
+{% endblock base_head %}
+
+{% block content %}
+    <h1 style='text-align:center'>What actully to buy from us ...!</h1>
+    <div class='container'>
+    <div class='row'>
+        <div class='col' style='text-align:center'>
+            <img src="{% static 'img/006.png' %}" class='center' style="width:100%;max-width:480px"/>
+            <p>{{ content }}</p>
+        </div>
+    </div>
+    </div>
+    {% if request.user.is_authenticated %}
+        <div class='row'>
+            <div class='col' style='text-align:center'>
+                <p>{{ premium_content }}</p>
+            </div>
+        </div>
+    {% endif %}
+{% endblock content %}

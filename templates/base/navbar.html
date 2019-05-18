@@ -1,0 +1,38 @@
+{% url 'home' as home_url %}
+{% url 'accounts:contact' as contact_url %}
+{% url 'products:products' as products_url %}
+{% url 'accounts:login' as login_url %}
+{% url 'accounts:logout' as logout_url %}
+{% url 'accounts:register' as register_url %}
+{% url 'carts:home' as cart_url %}
+
+<!-- Black with white text -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item {% if request.path == home_url %}active{% endif %}">
+        <a class="nav-link" href="{{ home_url }}">Home</a>
+        </li>
+        <li class="nav-item {% if request.path == contact_url %}active{% endif %}">
+        <a class="nav-link" href="{{ contact_url }}">Contact</a>
+        </li>
+        <li class="nav-item {% if request.path == products_url %}active{% endif %}">
+        <a class="nav-link" href="{{ products_url }}">Products</a>
+        </li>
+        {% if request.user.is_authenticated %}
+            <li class="nav-item {% if request.path == logout_url %}active{% endif %}">
+            <a class="nav-link" href="{{ logout_url }}">Logout</a>
+            </li>
+        {% else %}
+            <li class="nav-item {% if request.path == login_url %}active{% endif %}">
+            <a class="nav-link" href="{{ login_url }}">Login</a>
+            </li>
+            <li class="nav-item {% if request.path == register_url %}active{% endif %}">
+            <a class="nav-link" href="{{ register_url }}">Register</a>
+            </li>
+        {% endif %}
+        <li class="nav-item {% if request.path == cart_url %}active{% endif %}">
+        <a class="nav-link" href="{{ cart_url }}"><span class="navbar-cart-count">{{ request.session.cart_items }}</span><i class="fa fa-shopping-cart" aria-hidden="true"></i></a>
+        </li>
+    </ul>
+    {% include 'search/snippets/search-form.html' %}
+</nav>
