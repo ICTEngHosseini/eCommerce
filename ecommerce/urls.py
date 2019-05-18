@@ -31,7 +31,8 @@ urlpatterns = [
     path(r'search/', include('search.urls', namespace='search')),
     path(r'carts/', include('carts.urls', namespace='carts')),
     path(r'accounts/', include('accounts.urls', namespace='accounts')),
-    path(r'checkout/address', include('addresses.urls', namespace='addresses'))
+    path(r'checkout/address', include('addresses.urls', namespace='addresses')),
+    path(r'billing/', include('billing.urls', namespace='billing'))
 ]
 
 if settings.DEBUG:
