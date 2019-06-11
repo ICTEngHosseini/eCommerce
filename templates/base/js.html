@@ -11,9 +11,15 @@
 <!--<script src="{% static 'js/bootstrap.min.js' %}"></script>-->
 <!-- Latest compiled jquery-confirm -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-<!-- custome ecommerce JS -->
+<!-- custom ecommerce JS -->
 <script src="{% static 'js/ecommerce.js' %}"></script>
+<!-- Main ecommerce JS -->
+<script src="{% static 'js/ecommerce.main.js' %}"></script>
 <!-- Django Secure AJAX JS -->
 <script src="{% static 'js/csrf.ajax.js' %}"></script>
 <!-- Stripe payment method JS -->
 <script src="https://js.stripe.com/v3/"></script>
+<!-- JS Render -->
+<script src="https://cdnjs.com/libraries/jsrender/1.0.3/jsrender.js" ></script>
+
+{% include 'base/js_templates.html' %}
