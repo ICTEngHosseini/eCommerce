@@ -2,7 +2,7 @@ import stripe
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render, redirect
 from django.utils.http import is_safe_url
-from .models import BillingProfile
+from .models import BillingProfile, Card
 
 
 stripe.api_key = "sk_test_xsB0ceSWejUXhmSJSlOnqitJ00TTZHqDU"
@@ -34,7 +34,8 @@ def payment_method_create_view(request):
         if token is not None:
             customer = stripe.Customer.retrieve(billing_profile.customer_id)
             card = customer.sources.create(source=token)
-            print(card)     # start saving our cards too!
+            new_card_obj = Card.objects.add_new(billing_profile, card)
+            print(new_card_obj)
         return JsonResponse({"message": "Success! Your card was added."})
     return HttpResponse("Error", status_code=401)
 
