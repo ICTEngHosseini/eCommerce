@@ -5,7 +5,7 @@ from django.utils.http import is_safe_url
 from .models import BillingProfile, Card
 
 
-stripe.api_key = "sk_test_xsB0ceSWejUXhmSJSlOnqitJ00TTZHqDU"
+stripe.api_key = "sk_test_xsB0ceSWejUXhmSJSlOnqitJ00TTZHqDU5"
 
 STRIPE_PUB_KEY = 'pk_test_xM90FAQHNuiRyxScNdeT1POR00a0jpuSPZ'
 
@@ -17,7 +17,7 @@ def payment_method_view(request):
 
     billing_profile, billing_profile_created = BillingProfile.objects.new_or_get(request)
     if not billing_profile:
-        return redirect("/cart")
+        return redirect("/carts")
     next_url = None
     next_ = request.GET.get('next')
     if is_safe_url(next_, request.get_host()):

@@ -3,15 +3,15 @@ $(document).ready(function(){
     var paymentForm = $(".stripe-payment-form")
     var stripeToken = paymentForm.attr("data-token")
     var stripeNextUrl = paymentForm.attr("data-next-url")
-    var stripeBtnTitle = paymentForm.attr("data-btn-title") || "Add card"
+    var stripeBtnTitle = paymentForm.attr("data-btn-title") || "Add Card"
     var stripeTemplate = $.templates("#stripeTemplate")
     var stripeTemplateDataContext = {
       publish_key: stripeToken,
       next_url: stripeNextUrl,
-      btn_title: data-btn-title
+      btn_title: stripeBtnTitle,
     }
     var stripeTemplateHtml = stripeTemplate.render(stripeTemplateDataContext)
-    stripeFormModule.html(stripeTemplateHtml)
+    paymentForm.html(stripeTemplateHtml)
     if (paymentForm.length > 1){
         alert("Only one payment form is allowed per page")
         paymentForm.css('display', 'none')
@@ -19,7 +19,7 @@ $(document).ready(function(){
     else if (paymentForm.length == 1) {
 
     var pubKey = paymentForm.attr('data-token')
-    var nextUrl = paymentFrom.attr('data-next-url')
+    var nextUrl = paymentForm.attr('data-next-url')
 
     // Create a Stripe client.
     var stripe = Stripe(pubKey);
@@ -100,7 +100,7 @@ $(document).ready(function(){
         success: function(data){
             var succesMsg = data.message || "Success! Your card was added."
             card.clear()
-            if (nextUrl{
+            if (nextUrl){
               succesMsg = succesMsg + "<br/><i class='fa fa-spin fa-spinner'></i> Redirecting ..."
             }
             if ($.alert){
