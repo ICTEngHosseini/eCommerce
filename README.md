@@ -1,5 +1,5 @@
 eCommerce
-Tihs's Web-app for eCommerce project.
+This's Web-app for eCommerce project.
 Note's : For help to create this app i used Justin Micheal eCommerce Course.
   If you need know more about this course see https://www.codingforentrepreneurs.com/.
 
