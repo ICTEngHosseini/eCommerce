@@ -1,9 +1,7 @@
 eCommerce
-This's Web-app for eCommerce project.
-Note's : For help to create this app i used Justin Micheal eCommerce Course.
-  If you need know more about this course see https://www.codingforentrepreneurs.com/.
+This's Web-app for eCommerce project.FrontEnd of this projects on the constraction. please be waiting.
 
 Language Used : Python 3.6+
 Framework Used : Django
 Front-end : HTML/CSS/JQuery and Bootstrap
-API Used : Stripe for billing acounts
+API Used : Stripe for billing accounts
