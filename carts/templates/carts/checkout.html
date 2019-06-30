@@ -41,20 +41,26 @@
             </div>
         </div>
     {% else %}
-        <div class="row">
-            <div class="col-10 col-md-6 mx-auto">
-                <h1>Checkout ...</h1>
-                <p>Cart Item : {% for product in object.cart.products.all %}{{ product }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
-                <p>Shipping Address : {{ object.shipping_address.get_address }}</p>
-                <p>Billing Address : {{ object.billing_address.get_address }}</P>
-                <p>Cart Total : {{ object.cart.total }}</p>
-                <p>Shipping Total : {{ object.shipping_total }}</p>
-                <p>Order Total : {{ object.total }}</p>
-                <form action="" method="POST">{% csrf_token %}
-                    <button type="submit" class='btn btn-success'>Finalize</button>
-                </form>
+        {% if not has_card %}
+            <!-- enter credit card here -->
+             <div class="stripe-payment-form" data-btn-title="Add Payment Method"
+                  data-next-url='{{ request.build_absolute_uri }}' data-token="{{ publish_key }}"></div>
+        {% else %}
+            <div class="row">
+                <div class="col-10 col-md-6 mx-auto">
+                    <h1>Checkout ...</h1>
+                    <p>Cart Item : {% for product in object.cart.products.all %}{{ product }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+                    <p>Shipping Address : {{ object.shipping_address.get_address }}</p>
+                    <p>Billing Address : {{ object.billing_address.get_address }}</P>
+                    <p>Cart Total : {{ object.cart.total }}</p>
+                    <p>Shipping Total : {{ object.shipping_total }}</p>
+                    <p>Order Total : {{ object.total }}</p>
+                    <form action="" method="POST">{% csrf_token %}
+                        <button type="submit" class='btn btn-success'>Finalize</button>
+                    </form>
+                </div>
             </div>
-        </div>
+        {% endif %}
     {% endif %}
 {% endif %}
 
